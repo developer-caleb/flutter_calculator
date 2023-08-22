@@ -2,9 +2,13 @@ import 'package:calculator/calculator/enum.dart';
 import 'package:get/get.dart';
 
 class CalculatorController extends GetxController {
+  //화면에 보여질 숫자
   RxString num1 = ''.obs;
+  //미리 기록된 숫자
   String num0 = '';
+  //operator 상태
   Rx<OperatorType> operator = OperatorType.none.obs;
+
   KeyType lastKeyType = KeyType.none;
 
   void onClickNumber(String inputNum) {
