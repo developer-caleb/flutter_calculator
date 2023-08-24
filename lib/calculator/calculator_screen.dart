@@ -118,6 +118,7 @@ class CalculatorScreen extends StatelessWidget {
             break;
           case '.':
             controller.onClickPoint();
+            break;
           case 'C':
             controller.onClickClear();
             break;
@@ -140,7 +141,8 @@ class CalculatorScreen extends StatelessWidget {
         child: Center(
           child: Text(
             name,
-            style: TextStyle(color: Colors.white, fontSize: 30, fontWeight: FontWeight.w700),
+            style: TextStyle(
+                color: Colors.white, fontSize: 30, fontWeight: FontWeight.w700),
           ),
         ),
       ),
@@ -152,13 +154,16 @@ class CalculatorScreen extends StatelessWidget {
     return Container(
       width: double.maxFinite,
       padding: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
-      decoration: BoxDecoration(borderRadius: BorderRadius.circular(10), color: Color(0xffFFFFFF)),
+      decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(10), color: Color(0xffFFFFFF)),
       child: Obx(() => Row(
             children: [
               Text(controller.operator.value.toText()),
               Spacer(),
               Text(
-                controller.num1.value.isEmpty ? '0' : controller.num1.value.toString(),
+                controller.num1.value.isEmpty
+                    ? '0'
+                    : controller.num1.value.toString(),
                 style: TextStyle(fontSize: 30, fontWeight: FontWeight.w700),
                 textAlign: TextAlign.right,
               ),
